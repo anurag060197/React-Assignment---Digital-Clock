@@ -16,8 +16,10 @@ const App = () => {
         if(sec == 60){
             sec = 0;
             min++;
-            if(min == 60)
+            if(min == 60){
+                min = 0;
                 hr++;
+            }
         }
         if(min < 10)
             min = '0' + min;
