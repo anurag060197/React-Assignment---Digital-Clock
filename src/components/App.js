@@ -12,19 +12,19 @@ const App = () => {
         amORpm = "PM";
     }
     const updateTime = ()=>{
-        sec++;
+        sec = Number(sec) + 1;
         if(sec == 60){
             sec = 0;
-            min++;
+            min = Number(min) + 1;
             if(min == 60){
                 min = 0;
-                hr++;
+                hr = Number(hr) + 1;
             }
         }
         if(min < 10)
-            min = '0' + min;
+            min = '0' + Number(min);
         if(sec < 10)
-            sec = '0' + sec;
+            sec = '0' + Number(sec);
         setTime(hr+":"+min+":"+sec+" "+amORpm)
     }
     useEffect(()=>{
