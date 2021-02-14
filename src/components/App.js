@@ -11,6 +11,8 @@ const App = () => {
         hr = hr - 12;
         amORpm = "PM";
     }
+    if(hr === 0 && amORpm === "AM")
+        hr = 12;
     const updateTime = ()=>{
         sec = Number(sec) + 1;
         if(sec === 60){
@@ -20,7 +22,7 @@ const App = () => {
                 min = 0;
                 hr = Number(hr) + 1;
                 if(hr === 12 && amORpm === "PM"){
-                    hr = 0;
+                    // hr = 0;
                     amORpm = "AM";
                 }
                 else if(hr === 12 && amORpm === "AM"){
